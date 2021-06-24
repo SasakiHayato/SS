@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int encount = 0;
+    public bool isPlayer = false;
     // PlayerPosition
     Vector3 target;
-
-    GameManager manager;
     void Start()
     {
         target = this.transform.position;
-        manager = FindObjectOfType<GameManager>();
     }
 
     // Tile間を移動する速さ
     private float speed = 5f;
     void Update()
     {
+        if (!isPlayer) return;
+
         if (this.transform.position == target)
         {
             Move();
         }
-
+        
         this.transform.position = Vector3.MoveTowards(this.transform.position, target, speed * Time.deltaTime);
     }
     /// <summary>
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+
         if (h == 0 && v == 0)
         {
             x = false;
@@ -42,10 +44,12 @@ public class PlayerController : MonoBehaviour
         else if (h != 0)
         {
             x = true;
+            Encount();
         }
         else if (v != 0)
         {
             y = true;
+            Encount();
         }
 
         if (!y)
@@ -71,5 +75,10 @@ public class PlayerController : MonoBehaviour
                 target.y -= 1f;
             }
         }
+    }
+
+    public void Encount()
+    {
+        encount++;
     }
 }
