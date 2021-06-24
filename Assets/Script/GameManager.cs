@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
     {
         RandomEncounter();
 
-        if (encount < player.step)
-        {
-            Scene();
-        }
+        //if (encount < player.step)
+        //{
+        //    Scene();
+        //}
     }
 
     private void RandomEncounter()
