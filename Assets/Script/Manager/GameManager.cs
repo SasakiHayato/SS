@@ -1,54 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using System.Linq;
 
-public class GameManager : MonoBehaviour
+public class GameManager
 {
-    private int encount;
-    
-    PlayerController player;
-    FadeController fade;
+    GameObject game = null;
+    //static FieldManager fied = null;
+    static GameManager instance = new GameManager();
+    private GameManager() { }
 
-    void Start()
+    static public GameManager GetInstnce() { return instance; }
+
+    public void Set(GameObject enemy)
     {
-        player = FindObjectOfType<PlayerController>();
-        fade = this.gameObject.AddComponent<FadeController>();
-        
-        player.isPlayer = true;
+        instance.game = enemy;
     }
-
-    void Update()
+    public GameObject Get()
     {
-        RandomEncounter();
-
-        if (encount == player.encount)
-        {
-            player.isPlayer = false;
-            fade.FadeOut();
-
-            if (fade.isScene)
-            {
-                Scene();
-            }
-        }
+        return instance.game;
     }
+    //static public GameManager Instance
+    //{
+    //    get
+    //    {
+    //        if (fied == null)
+    //        {
+    //            fied = GameObject.FindObjectOfType<FieldManager>();
 
-    private bool encountBool = true;
+    //            if (fied )
+    //            {
 
-    private void RandomEncounter()
-    {
-        if (encountBool)
-        {
-            encount = Random.Range(1, 3);
-            Debug.Log(encount);
-        }
-        encountBool = false;
-    }
+    //            }
+    //        }
 
-    public void Scene()
-    {
-        SceneManager.LoadScene("ButtleScene");
-    }
+    //        return instance;
+    //    }
+    //}
 }

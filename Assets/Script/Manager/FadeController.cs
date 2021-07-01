@@ -9,7 +9,7 @@ public class FadeController : MonoBehaviour
     private Image m_image;
 
     private bool isOut = false;
-    public bool isScene = false;
+    [System.NonSerialized] public bool isScene = false;
 
     private float time = 0;
     private float fadeTime = 1.0f;
@@ -25,7 +25,7 @@ public class FadeController : MonoBehaviour
                 time = 1.0f;
                 isOut = false;
                 isScene = true;
-                Debug.Log("終了");
+                //Debug.Log("終了");
             }
 
             m_image.color = new Color(0, 0, 0, time);
@@ -49,7 +49,7 @@ public class FadeController : MonoBehaviour
         GameObject fadeObject = new GameObject("Fide");
         m_canvas = fadeObject.AddComponent<Canvas>();
         fadeObject.AddComponent<GraphicRaycaster>();
-        fadeObject.AddComponent<GameManager>();
+        fadeObject.AddComponent<FieldManager>();
         m_canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         m_canvas.sortingOrder = 100;
 

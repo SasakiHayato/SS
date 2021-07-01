@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int encount = 0;
-    public bool isPlayer = false;
+    [System.NonSerialized] public int encount = 0;
+    [System.NonSerialized] public bool isPlayer = false;
     // PlayerPosition
     Vector3 target;
     void Start()
