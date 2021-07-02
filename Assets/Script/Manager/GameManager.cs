@@ -5,20 +5,20 @@ using System.Linq;
 
 public class GameManager
 {
-    GameObject game = null;
+    int _enemyNumber = 0;
     //static FieldManager fied = null;
     static GameManager instance = new GameManager();
     private GameManager() { }
 
     static public GameManager GetInstnce() { return instance; }
 
-    public void Set(GameObject enemy)
+    public void EncountSet(int enemy)
     {
-        instance.game = enemy;
+        instance._enemyNumber = enemy;
     }
-    public GameObject Get()
+    public int EncountGet()
     {
-        return instance.game;
+        return instance._enemyNumber;
     }
     //static public GameManager Instance
     //{

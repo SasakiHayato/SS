@@ -94,13 +94,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fba0a067cf03045b18283c5842e30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackPatterns: []
-  _name: Sasaki
-  _maxLife: 0
-  _life: 0
-  _maxMagicpoint: 0
-  _magicpoint: 0
-  _power: 0
-  _defence: 0
-  _weapon: 0
-  _armor: 0
+  m_attackPatterns: []
+  m_name: sasaki
+  m_maxLife: 10
+  m_life: 10
+  m_maxMagicpoint: 0
+  m_magicpoint: 0
+  m_power: 2
+  m_magicPower: 0
+  m_weapon: 0
+  m_defence: 0
+  m_magicDefence: 0
+  m_armor: 0
+  m_speed: 0
+  m_critical: 0
+  m_avoidance: 0
+  m_hit: 0
+  m_attribute: 0
