@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestEnemy : Character
+public class EnemyBase : Character
 {
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

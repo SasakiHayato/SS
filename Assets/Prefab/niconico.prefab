@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8185268164702091177}
   - component: {fileID: 8220556966998774515}
   m_Layer: 0
-  m_Name: aaa
+  m_Name: niconico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,12 +102,11 @@ MonoBehaviour:
   m_magicpoint: 0
   m_power: 2
   m_magicPower: 0
-  m_weapon: 0
-  m_defence: 1
+  m_defence: 100
   m_magicDefence: 0
-  m_armor: 0
   m_speed: 0
   m_critical: 0
   m_avoidance: 0
   m_hit: 0
   m_attribute: 0
+  _text: {fileID: 0}

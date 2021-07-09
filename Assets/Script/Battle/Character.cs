@@ -31,14 +31,10 @@ public class Character : MonoBehaviour
     [SerializeField] public int m_power = 0;
     /// <summary>魔法攻撃力</summary>
     [SerializeField] public int m_magicPower = 0;
-    /// <summary>武器威力</summary>
-    [SerializeField] public int m_weapon = 0;
     /// <summary>防御力</summary>
     [SerializeField] public int m_defence = 0;
     /// <summary>魔法防御力</summary>
     [SerializeField] public int m_magicDefence = 0;
-    /// <summary>防具性能</summary>
-    [SerializeField] public int m_armor = 0;
     /// <summary>速度</summary>
     [SerializeField] public int m_speed = 0;
     /// <summary>クリティカル</summary>
@@ -50,8 +46,10 @@ public class Character : MonoBehaviour
     /// <summary>属性</summary>
     [SerializeField] public Attribute m_attribute = Attribute.fire;
     /// <summary>ダメージ量を表示するテキスト</summary>
-    //[SerializeField] private Text _text;
+    [SerializeField] private Text _text;
 
+    /// <summary>通常攻撃</summary>
+    /// <returns>ダメージ量</returns>
     public int NormalAttack()
     {
         return m_power;
@@ -59,7 +57,9 @@ public class Character : MonoBehaviour
 
     public void Damage(int power)
     {
-        m_life -= power;
+        int damage = power - m_defence;
+        if (damage <= 0) { damage = 1; }
+        m_life -= damage;
         Debug.Log("現在の" + m_name + "の体力" + m_life);
         if (m_life <= 0)
         {
