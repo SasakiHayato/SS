@@ -3,16 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum Attribute
-{
-    none,
-    fire,
-    water,
-    grass,
-    right,
-    dark
-}
-
 public class Character : MonoBehaviour
 {
     /// <summary>攻撃パターン</summary>
