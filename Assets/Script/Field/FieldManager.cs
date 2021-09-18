@@ -14,14 +14,14 @@ public class FieldManager : MonoBehaviour
     private int _enemyCount;
 
     PlayerController player;
-    FadeController fade;
 
     [SerializeField] private GameObject enemy;
+    [SerializeField] FadeClass m_fade;
 
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        fade = this.gameObject.AddComponent<FadeController>();
+        
 
         player.isPlayer = true;
     }
@@ -33,10 +33,10 @@ public class FieldManager : MonoBehaviour
         if (encount == player.encount)
         {
             player.isPlayer = false;
-            fade.FadeOut();
+            m_fade.SetCanvas(FadeType.Out);
             _enemyCount = Random.Range((int)EnemyData.Waru, (int)EnemyData.Waruxaaa + 1);
 
-            if (fade.isScene)
+            if (m_fade.FadeEnd)
             {
                 GameManager.GetInstnce().EncountSet(_enemyCount);
                 Scene();
